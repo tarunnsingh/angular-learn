@@ -16,7 +16,13 @@
   </p>
 </div>
 
-<div class="container">
+<div
+  class="container"
+  [ngStyle]="{
+    border: clickCounter > 5 ? '5px solid black' : 'none',
+    'background-color': clickCounter > 5 ? 'yellow' : 'lightgrey'
+  }"
+>
   <p>
     <ng-template [ngIf]="clickCounter > 5" [ngIfElse]="none">
       <span>The counter is <strong>greater</strong> than 5.</span>
